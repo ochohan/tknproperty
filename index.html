@@ -1,157 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TKN Property Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TKN Services PTY LTD | Concrete Resurfacing, Epoxy Flooring & Home Services – Sydney</title>
+  <meta name="description" content="TKN Services PTY LTD (ABN: 38612189474) – Sydney Metro specialists in concrete driveway resurfacing, epoxy flooring, pressure washing and gutter cleaning. Free quotes. Call/SMS 0422 802 722." />
+  <meta name="theme-color" content="#2d7d2f" />
+  <meta property="og:title" content="TKN Services PTY LTD – Concrete, Epoxy & Home Services" />
+  <meta property="og:description" content="Concrete driveway resurfacing, epoxy flooring, pressure washing and gutter cleaning across Sydney Metro. Free site visit & custom proposal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tknpropertyservices.com" />
+  <meta property="og:image" content="assets/logo-tkn.png" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
   <style>
-    body { font-family: Arial, sans-serif; }
-    /* Navbar */
-    .navbar { background-color: #004080; }
-    .navbar .nav-link, .navbar-brand { color: white !important; }
-    /* Hero */
-    .hero {
-      background: #004080 url('https://picsum.photos/1600/600?blur') center/cover no-repeat;
-      color: white; text-align: center; padding: 120px 20px;
+    :root{
+      --brand:#2d7d2f; /* deep green */
+      --accent:#79b343; /* light green */
+      --ink:#1a1a1a;
     }
-    .hero h1 { font-size: 3rem; font-weight: bold; }
-    .service-card img { height: 200px; object-fit: cover; }
-    footer { background: #222; color: white; padding: 20px 0; text-align: center; }
+    body{color:var(--ink);}    
+    .navbar-brand img{height:42px; width:auto}
+    .btn-brand{background:var(--brand); color:#fff; border:0}
+    .btn-brand:hover{background:#235e25; color:#fff}
+    .text-brand{color:var(--brand)}
+    .badge-accent{background:var(--accent)}
+
+    /* Hero */
+    .hero{
+      position:relative; 
+      background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1541976076758-347942db1975?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover; background-position:center; 
+      min-height:62vh; display:grid; place-items:center; color:#fff;
+    }
+    .hero h1{font-weight:800; letter-spacing:.3px}
+    .hero .lead{max-width:780px}
+
+    /* Cards */
+    .service-card .icon{font-size:2rem; color:var(--brand)}
+
+    /* Sections */
+    section{scroll-margin-top:80px}
+
+    /* Process list */
+    .step{display:flex; gap:.9rem}
+    .step .num{flex:0 0 36px; height:36px; border-radius:50%; background:var(--accent); color:#0f2a0f; display:grid; place-items:center; font-weight:700}
+
+    /* Quick action bar (mobile) */
+    .quickbar{position:fixed; left:0; right:0; bottom:0; z-index:1030; background:#fff; box-shadow:0 -6px 24px rgba(0,0,0,.08); padding:.5rem}
+    .quickbar .btn{font-weight:600}
+    @media (min-width:992px){.quickbar{display:none}}
+
+    /* Footer */
+    footer a{color:#e8ffe8}
   </style>
+
+  <!-- LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TKN Services PTY LTD",
+    "url": "https://tknpropertyservices.com",
+    "logo": "https://tknpropertyservices.com/assets/logo-tkn.png",
+    "telephone": "+61 422 802 722",
+    "areaServed": "Sydney Metro",
+    "description": "Concrete driveway resurfacing, epoxy flooring, pressure washing and gutter cleaning.",
+    "address": {"@type":"PostalAddress","addressRegion":"NSW","addressCountry":"AU"}
+  }
+  </script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">TKN Services</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand d-flex align-items-center" href="#top">
+        <!-- Place the file at /assets/logo-tkn.png on GitHub Pages -->
+        <img src="assets/logo-tkn.png" alt="TKN Services logo" />
+        <span class="ms-2 fw-bold">TKN Services PTY LTD</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#quote">Quote</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#concrete">Concrete</a></li>
+          <li class="nav-item"><a class="nav-link" href="#epoxy">Epoxy</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pressure">Pressure Washing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gutter">Gutter Cleaning</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-brand" href="#contact"><i class="bi bi-telephone-outbound me-1"></i> Get a free quote</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container text-center py-5">
+      <span class="badge rounded-pill badge-accent text-dark mb-3">Sydney Metro</span>
+      <h1 class="display-5">Concrete Resurfacing • Epoxy Floors • Pressure Washing • Gutter Cleaning</h1>
+      <p class="lead mt-3">Proudly Australian‑owned. We use quality materials (incl. Dulux systems) and deliver durable, great‑looking results. Free site visit and customised proposal.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap mt-3">
+        <a href="#services" class="btn btn-light"><i class="bi bi-list-check me-1"></i> Explore services</a>
+        <a href="tel:+61422802722" class="btn btn-brand"><i class="bi bi-telephone me-1"></i> Call/SMS 0422 802 722</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST STRIP -->
+  <div class="py-3 bg-light border-bottom">
+    <div class="container d-flex flex-wrap gap-3 justify-content-center align-items-center small text-muted">
+      <span><i class="bi bi-shield-check me-1 text-brand"></i>ABN: 38612189474</span>
+      <span><i class="bi bi-globe2 me-1 text-brand"></i><a href="https://tknpropertyservices.com" class="text-decoration-none">tknpropertyservices.com</a></span>
+      <span><i class="bi bi-award me-1 text-brand"></i>Quality materials • Eco‑friendly approach</span>
+    </div>
+  </div>
+
+  <!-- SERVICES SUMMARY -->
+  <section id="services" class="py-5">
     <div class="container">
-      <h1>TKN Property Services PTY LTD</h1>
-      <p>Concrete Resurfacing | Epoxy Flooring | Pressure Washing | Gutter Cleaning</p>
-      <a href="#quote" class="btn btn-light btn-lg mt-3">Get a Free Quote</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="container my-5">
-    <div class="text-center">
-      <h2>About Us</h2>
-      <p>
-        TKN Property Services is a proudly Australian-owned company committed to delivering 
-        high-quality, durable, and visually stunning solutions. We specialise in 
-        concrete resurfacing, epoxy flooring, and home maintenance services.
-      </p>
-      <p><b>Call or SMS Hashmat: 0422 802 722</b></p>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" class="container my-5">
-    <h2 class="text-center mb-4">Our Services</h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card service-card">
-          <img src="https://picsum.photos/400/200?1" class="card-img-top" alt="Concrete Resurfacing">
-          <div class="card-body text-center">
-            <h5 class="card-title">Concrete Resurfacing</h5>
-            <p>Driveway resurfacing with Dulux concrete solutions for durability & style.</p>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Services</h2>
+        <p class="text-muted mb-0">End‑to‑end delivery from consultation to completion.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card service-card h-100">
+            <div class="card-body">
+              <div class="icon mb-2"><i class="bi bi-bricks"></i></div>
+              <h5 class="card-title">Concrete – Driveway Resurfacing</h5>
+              <p class="card-text">Surface prep, priming, Dulux concrete resurfacing system, colour & textures, sealing and protection.</p>
+              <a class="stretched-link" href="#concrete" aria-label="Learn more about concrete resurfacing"></a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card service-card">
-          <img src="https://picsum.photos/400/200?2" class="card-img-top" alt="Epoxy Services">
-          <div class="card-body text-center">
-            <h5 class="card-title">Epoxy Flooring</h5>
-            <p>Durable, stylish epoxy flooring ideal for garages, kitchens & warehouses.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="card service-card h-100">
+            <div class="card-body">
+              <div class="icon mb-2"><i class="bi bi-texture"></i></div>
+              <h5 class="card-title">Epoxy Flooring</h5>
+              <p class="card-text">Durable, low‑maintenance finishes with epoxy base, colour coats, vinyl flakes and clear top coats.</p>
+              <a class="stretched-link" href="#epoxy"></a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card service-card">
-          <img src="https://picsum.photos/400/200?3" class="card-img-top" alt="Pressure Washing">
-          <div class="card-body text-center">
-            <h5 class="card-title">Pressure Washing</h5>
-            <p>High-pressure cleaning for driveways, gutters, and outdoor surfaces.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="card service-card h-100">
+            <div class="card-body">
+              <div class="icon mb-2"><i class="bi bi-water"></i></div>
+              <h5 class="card-title">Pressure Washing</h5>
+              <p class="card-text">Driveways, paths, gutters and more – safe, effective cleaning with the right nozzles & detergents.</p>
+              <a class="stretched-link" href="#pressure"></a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card service-card">
-          <img src="https://picsum.photos/400/200?4" class="card-img-top" alt="Gutter Cleaning">
-          <div class="card-body text-center">
-            <h5 class="card-title">Gutter Cleaning</h5>
-            <p>Thorough cleaning to protect your home from water damage & blockages.</p>
+        <div class="col-md-6 col-lg-3">
+          <div class="card service-card h-100">
+            <div class="card-body">
+              <div class="icon mb-2"><i class="bi bi-cloud-rain"></i></div>
+              <h5 class="card-title">Gutter Cleaning</h5>
+              <p class="card-text">Debris removal, downspout clearing and flushing to prevent leaks and water damage.</p>
+              <a class="stretched-link" href="#gutter"></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quote Form -->
-  <section id="quote" class="bg-light py-5">
+  <!-- CONCRETE RESURFACING -->
+  <section id="concrete" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">Get a Free Quote</h2>
-      <form class="row g-3">
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Your Name" required>
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Concrete – Driveway Resurfacing</h2>
+          <p>TKN Property Services is a trusted Sydney Metro provider. Since 2022, we’ve delivered high‑quality spray‑on paving and resurfacing using Dulux systems for long‑lasting results.</p>
+          <div class="mb-3">
+            <h6 class="text-brand">Work involved</h6>
+            <div class="step"><div class="num">1</div><div><strong>Surface prep.</strong> Pressure‑wash, repair cracks, and grind/etch to improve adhesion.</div></div>
+            <div class="step mt-2"><div class="num">2</div><div><strong>Prime.</strong> Apply compatible Dulux concrete primer for strong bonding.</div></div>
+            <div class="step mt-2"><div class="num">3</div><div><strong>Resurface.</strong> Install Dulux cement‑based polymer system (sprayed/rolled/trowelled).</div></div>
+            <div class="step mt-2"><div class="num">4</div><div><strong>Customise.</strong> Stencils, slip‑resistant textures and colour tint options.</div></div>
+            <div class="step mt-2"><div class="num">5</div><div><strong>Seal & protect.</strong> Dulux sealer for UV, stain and wear resistance (foot traffic 24–48h; vehicles 3–7 days).</div></div>
+          </div>
+          <a href="#contact" class="btn btn-brand">Request a driveway quote</a>
         </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="Your Email" required>
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+            <iframe src="https://www.youtube.com/embed/4Z7sBHe8D8Q?rel=0" title="Concrete resurfacing overview" allowfullscreen></iframe>
+          </div>
+          <p class="text-muted small mt-2">Video for illustration only. We proudly use Dulux products for a professional finish.</p>
         </div>
-        <div class="col-md-6">
-          <input type="tel" class="form-control" placeholder="Your Phone" required>
-        </div>
-        <div class="col-md-6">
-          <select class="form-select" required>
-            <option value="">Select Service</option>
-            <option>Concrete Resurfacing</option>
-            <option>Epoxy Flooring</option>
-            <option>Pressure Washing</option>
-            <option>Gutter Cleaning</option>
-          </select>
-        </div>
-        <div class="col-12">
-          <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
-        </div>
-      </form>
+      </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="container my-5 text-center">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@tknpropertyservices.com">info@tknpropertyservices.com</a></p>
-    <p>Phone: 0422 802 722</p>
-    <p>Sydney Metro Area</p>
+  <!-- EPOXY -->
+  <section id="epoxy" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6 order-lg-2">
+          <h2 class="fw-bold">Epoxy Flooring</h2>
+          <p>Durable, hygienic and easy to clean – ideal for garages, kitchens, warehouses, schools and more. Systems include 100% solids epoxy base, coloured coats, optional vinyl flakes, and polyurethane/polyaspartic clear coats.</p>
+          <h6 class="text-brand">How we apply epoxy</h6>
+          <ol>
+            <li><strong>Prepare the slab:</strong> deep clean, repair cracks/holes, grind or acid‑etch; ensure dry.</li>
+            <li><strong>Prime:</strong> choose a compatible epoxy/moisture‑block primer; roll on evenly and allow to dry.</li>
+            <li><strong>Mix resin + hardener:</strong> follow ratios; mix thoroughly to ensure proper curing.</li>
+            <li><strong>Base coat:</strong> roll a uniform coat; level edges; allow 12–24h to set.</li>
+            <li><strong>Top coat & flakes:</strong> apply protective top coat; optionally broadcast vinyl flakes; let cure 2–3 days.</li>
+          </ol>
+          <h6 class="text-brand">Care & maintenance</h6>
+          <ul>
+            <li>Regular sweep/vacuum; mop with warm water and pH‑neutral cleaner.</li>
+            <li>Wipe spills promptly; avoid abrasive pads and harsh chemicals.</li>
+            <li>Re‑seal every 3–5 years in high‑traffic or UV‑exposed areas.</li>
+          </ul>
+          <a href="#contact" class="btn btn-brand">Ask about epoxy options</a>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1582582429416-0ef1e7a6a5ec?q=80&w=1600&auto=format&fit=crop" alt="Epoxy flake floor finish"/>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 TKN Services PTY LTD | ABN: 38612189474</p>
+  <!-- PRESSURE WASHING -->
+  <section id="pressure" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Pressure Washing</h2>
+          <p>High‑pressure cleaning to remove dirt, mould and grime from driveways, paths, patios and more. We select the right nozzles, detergent and pressure for each surface.</p>
+          <h6 class="text-brand">Typical workflow</h6>
+          <ul>
+            <li>Sweep/prepare area; protect doors, windows and plants.</li>
+            <li>Set up washer and apply a concrete‑safe cleaning solution.</li>
+            <li>Wash from high to low, overlapping passes for even coverage.</li>
+            <li>Rinse thoroughly; allow to dry and inspect. Optional sealing.</li>
+          </ul>
+          <h6 class="text-brand">Safety matters</h6>
+          <p class="mb-0">Gloves, eye protection and closed‑toe shoes are used. Pressure is adjusted to suit the substrate to prevent damage.</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1581093914630-5e7bfa9b5f42?q=80&w=1600&auto=format&fit=crop" alt="Pressure washing a driveway"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUTTER CLEANING -->
+  <section id="gutter" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Gutter Cleaning</h2>
+          <p>Keep rainwater flowing and avoid costly water damage. Our service includes debris removal, downspout clearing and a final flush.</p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 border rounded h-100"><strong>What’s included</strong><ul class="mb-0 mt-2">
+                <li>Inspection</li><li>Debris removal</li><li>Downspouts cleared</li><li>Minor issues addressed</li><li>Flush test</li>
+              </ul></div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 border rounded h-100"><strong>Why it matters</strong><ul class="mb-0 mt-2">
+                <li>Prevents water damage</li><li>Extends gutter life</li><li>Keeps pests away</li><li>Protects your home</li>
+              </ul></div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-brand mt-3">Book a gutter clean</a>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1523419409543-331653399ff7?q=80&w=1600&auto=format&fit=crop" alt="Clean gutters and downspouts"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <img class="img-fluid rounded shadow-sm" src="assets/logo-tkn.png" alt="TKN Services logo large"/>
+        </div>
+        <div class="col-lg-6">
+          <h2 class="fw-bold">About TKN Property Services</h2>
+          <p>We’re an Australian‑owned company committed to high‑quality, durable and visually stunning results. Our skilled team delivers a seamless experience from consultation to completion. We invest in technology and continuous training to provide cost‑effective, eco‑friendly and efficient flooring and property services.</p>
+          <p class="mb-0">Explore the options above or contact us to arrange a free site visit and customised proposal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Frequently Asked Questions</h2>
+        <p class="text-muted">A few quick answers. Call us anytime for details.</p>
+      </div>
+      <div class="accordion" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1">How quickly can you visit and quote?</button></h2>
+          <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"><div class="accordion-body">We offer free site visits across Sydney Metro and provide a tailored proposal promptly after inspection.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">What products do you use for concrete resurfacing?</button></h2>
+          <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">We proudly use Dulux primers, resurfacers, colour tints and sealers to ensure strong adhesion, durability and great finishes.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">How long before I can use my resurfaced driveway?</button></h2>
+          <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAcc"><div class="accordion-body">Typical cure time is 24–48 hours for foot traffic, and 3–7 days before vehicle use depending on conditions.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 bg-dark text-light">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <h2 class="fw-bold">Get a Free Quote</h2>
+          <p class="mb-1">Call or SMS <strong>Hashmat</strong> on <a class="link-light" href="tel:+61422802722">0422 802 722</a>.</p>
+          <p class="mb-4">Or email us at <a class="link-light" href="mailto:hello@tknpropertyservices.com">hello@tknpropertyservices.com</a>.</p>
+          <ul class="list-unstyled small text-secondary">
+            <li><i class="bi bi-geo-alt me-1"></i> Sydney Metro</li>
+            <li><i class="bi bi-card-text me-1"></i> ABN: 38612189474</li>
+            <li><i class="bi bi-globe2 me-1"></i> tknpropertyservices.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-5">
+          <div class="p-4 bg-black rounded-3 h-100">
+            <h6 class="mb-3">Quick contact</h6>
+            <div class="d-grid gap-2">
+              <a class="btn btn-light" href="tel:+61422802722"><i class="bi bi-telephone me-1"></i> Call now</a>
+              <a class="btn btn-outline-light" href="sms:+61422802722"><i class="bi bi-chat-dots me-1"></i> SMS us</a>
+              <a class="btn btn-outline-light" href="mailto:hello@tknpropertyservices.com?subject=Quote%20request%20-%20TKN%20Services"><i class="bi bi-envelope me-1"></i> Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4" style="background:var(--brand); color:#e8ffe8">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <img src="assets/logo-tkn.png" alt="TKN logo" style="height:28px" />
+        <span class="small">© <span id="y"></span> TKN Services PTY LTD. All rights reserved.</span>
+      </div>
+      <div class="small">ABN: 38612189474 • <a href="https://tknpropertyservices.com" class="text-decoration-none">tknpropertyservices.com</a></div>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Quick action mobile bar -->
+  <div class="quickbar">
+    <div class="container">
+      <div class="d-grid" style="grid-template-columns:1fr 1fr; gap:.5rem">
+        <a class="btn btn-brand" href="tel:+61422802722"><i class="bi bi-telephone me-1"></i> Call</a>
+        <a class="btn btn-outline-success" href="sms:+61422802722"><i class="bi bi-chat-dots me-1"></i> SMS</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Set current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Deployment notes:
+    1) Create a GitHub repo named tknpropertyservices.github.io or use /docs for Pages.
+    2) Add /assets/logo-tkn.png (export your logo file here). Update og:image if hosting elsewhere.
+    3) (Optional) Replace stock photos with your own before going live.
+  -->
 </body>
 </html>
