@@ -50,6 +50,10 @@
     .step{display:flex; gap:.9rem}
     .step .num{flex:0 0 36px; height:36px; border-radius:50%; background:var(--accent); color:#0f2a0f; display:grid; place-items:center; font-weight:700}
 
+    /* Media helpers for section images */
+    .media-frame{aspect-ratio:16/9; overflow:hidden; border-radius:.5rem; box-shadow:0 .25rem .75rem rgba(0,0,0,.08)}
+    .media-img{width:100%; height:100%; object-fit:cover; display:block}
+
     /* Quick action bar (mobile) */
     .quickbar{position:fixed; left:0; right:0; bottom:0; z-index:1030; background:#fff; box-shadow:0 -6px 24px rgba(0,0,0,.08); padding:.5rem}
     .quickbar .btn{font-weight:600}
@@ -79,7 +83,6 @@
   <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#top">
-        <!-- Place the file at /assets/logo-tkn.png on GitHub Pages -->
         <img src="assets/logo-tkn.png" alt="TKN Services logo" />
         <span class="ms-2 fw-bold">TKN Services PTY LTD</span>
       </a>
@@ -192,10 +195,10 @@
           <a href="#contact" class="btn btn-brand">Request a driveway quote</a>
         </div>
         <div class="col-lg-6">
-          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-            <iframe src="https://www.youtube.com/embed/4Z7sBHe8D8Q?rel=0" title="Concrete resurfacing overview" allowfullscreen></iframe>
+          <div class="media-frame">
+            <img class="media-img" src="https://sprayyourconcrete.com.au/wp-content/uploads/2023/11/concrete-resurfacing-costs.jpg" alt="Concrete driveway resurfacing example"/>
           </div>
-          <p class="text-muted small mt-2">Video for illustration only. We proudly use Dulux products for a professional finish.</p>
+          <p class="text-muted small mt-2">We proudly use Dulux products for a professional, long‑lasting finish.</p>
         </div>
       </div>
     </div>
@@ -225,7 +228,9 @@
           <a href="#contact" class="btn btn-brand">Ask about epoxy options</a>
         </div>
         <div class="col-lg-6 order-lg-1">
-          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1582582429416-0ef1e7a6a5ec?q=80&w=1600&auto=format&fit=crop" alt="Epoxy flake floor finish"/>
+          <div class="media-frame">
+            <img class="media-img" src="https://vicconcretepolished.com.au/wp-content/uploads/2021/08/9.jpg" alt="Epoxy flake floor finish"/>
+          </div>
         </div>
       </div>
     </div>
@@ -249,7 +254,9 @@
           <p class="mb-0">Gloves, eye protection and closed‑toe shoes are used. Pressure is adjusted to suit the substrate to prevent damage.</p>
         </div>
         <div class="col-lg-6">
-          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1581093914630-5e7bfa9b5f42?q=80&w=1600&auto=format&fit=crop" alt="Pressure washing a driveway"/>
+          <div class="media-frame">
+            <img class="media-img" src="https://pressure-washing.com.au/wp-content/uploads/Top-20-Pressure-Washing-in-Melbourne-Victoria.jpg" alt="Pressure washing a driveway surface"/>
+          </div>
         </div>
       </div>
     </div>
@@ -277,7 +284,9 @@
           <a href="#contact" class="btn btn-brand mt-3">Book a gutter clean</a>
         </div>
         <div class="col-lg-6">
-          <img class="img-fluid rounded shadow-sm" src="https://images.unsplash.com/photo-1523419409543-331653399ff7?q=80&w=1600&auto=format&fit=crop" alt="Clean gutters and downspouts"/>
+          <div class="media-frame">
+            <img class="media-img" src="https://guttercleaningmelbourne.com.au/wp-content/uploads/revslider/gutter-cleaning-melbourne1.jpg" alt="Professional gutter cleaning in progress"/>
+          </div>
         </div>
       </div>
     </div>
@@ -380,7 +389,7 @@
   <!-- Deployment notes:
     1) Create a GitHub repo named tknpropertyservices.github.io or use /docs for Pages.
     2) Add /assets/logo-tkn.png (export your logo file here). Update og:image if hosting elsewhere.
-    3) (Optional) Replace stock photos with your own before going live.
+    3) Replace stock photos with the hosted URLs already included (or your own versions).
   -->
 </body>
 </html>
